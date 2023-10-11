@@ -95,22 +95,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong>Q：</strong> 为什么提出影子环境？</p>
+        <hr>
+<p><strong>Q：</strong> 为什么提出影子环境？</p>
 <p><strong>A：</strong> 经过和多为测试沟通，影子环境的作用是覆盖一些测试环境没办法测的场景。集中于，因测试环境与线上环境数据不一致造成的问题，所以针对这一块，如果有一个数据和线上保持一致的环境就可以规避这个问题，也就是影子环境。</p>
 <p><strong>一些具体的业务场景（测试环境不能测，必须在预发布或者线上测试的场景）：</strong></p>
 <ol>
 <li>搜索业务在验证过程中发现，测试环境数据太少，导致搜索结果整体与预期相符合，但是在生产环境上，数据量增加了一个数量级，出现多条搜索结果排序与测试环境排序位置不同，从而与预期完全不符合的情况；</li>
 <li>书城后台配置书籍，很多时候测试环境并不存在符合条件的书籍。</li>
 </ol>
-<br/>
-
+<hr>
 <p><strong>Q：</strong> 如果数据要求一致，为什么不使用预发布环境？</p>
 <p><strong>A：</strong> 如果直接使用预发布环境，对于一些数据修改的需求，存在预发布的数据修改直接影响到线上环境的危险操作，所以预发布环境不符合要求。</p>
-<br/>
-
+<hr>
 <p><strong>Q：</strong> 影子环境的定位是什么？<br><strong>A：</strong> 将预发布环境的复杂功能回归，和测试环境不可测，必须借助线上数据才能测试的功能，的前置到开发测试阶段；并且数据上具有可靠性；</p>
-<br/>
-
+<hr>
 <p><strong>Q：</strong> 影子环境是为了提供一个拥有线上真实数据，同时能安全修改的环境。一般需求涉及哪些修改数据的场景呢？</p>
 <p><strong>A：</strong> 主要修改数据场景：</p>
 <ol>
@@ -119,8 +117,7 @@
 <li>一些用户公共数据，非用户层面的，比如书籍（修改直接影响线上）。如果使用影子环境，可以在影子环境对这块数据做数据备份，影子环境就可以安全修改了</li>
 </ol>
 <p><strong>经过分析，以上1、2两点 ，与数据量无直接关系，可以在测试环境完成测试，所以可以信赖测试环境，无需影子环境；所以第 3 点才是搭建影子环境最大的优势。</strong></p>
-<br/>
-
+<hr>
 <p><strong>Q：</strong> 搭建影子环境的阻碍或缺点有哪些？</p>
 <p><strong>A：</strong> 主要矛盾集中在成本和作用之间，具体如下：</p>
 <ol>
@@ -136,19 +133,17 @@
 <li>影子环境的部署：模拟生产，所以部署一套够不够，又是成本问题。</li>
 <li>制定环境使用的规范：权限划分，使用规范，使用时机、场景等，需要明确。</li>
 </ol>
-<br/>
-
+<hr>
 <p><strong>Q：</strong> 如果不是所有的存储都需要备份，就会存在不要要线上数据的服务，例如会员服务，所有数据是用户唯独的，可以直接使用测试环境数据；针对这类服务，如何搭建影子环境？</p>
 <p><strong>A：</strong> 对于不需要线上备份数据的服务，也需要部署影子服务，并且和所有其他有使用到备份数据的影子环境，同属一个命名空间（例如 test-shadow），用于营造一整套影子服务。</p>
-<br/>
-
+<hr>
 <p><strong>结论：影子环境的成本（存储成本、维护成本等）是很高的，仅内容组的存储成本上个月就接近8w，而影子环境解决的核心问题是，一些因为数据或数据量不一致造成的测试偏差问题，这样的场景，相对少数。综合来看收支严重不平衡。所以并不建议大费周章搭建影子环境</strong></p>
 <p><strong>替代方案：针对具体的需求，对于使用较集中的数据，开发测试小工具，或者联系DBA，提前将线上数据同步到测试环境即可，没必要单独搭建环境，配置高规格存储等。</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wdy12138.github.io/2023/10/11/%E5%BD%B1%E5%AD%90%E7%8E%AF%E5%A2%83/" data-id="clnl5168i0001p40j9p023ynm" data-title="影子环境讨论" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://wdy12138.github.io/2023/10/11/%E5%BD%B1%E5%AD%90%E7%8E%AF%E5%A2%83/" data-id="clnl5a7010001vy0j9wn1d4rr" data-title="影子环境讨论" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -199,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wdy12138.github.io/2023/10/10/hello-world/" data-id="clnl5168f0000p40jagwe02ve" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://wdy12138.github.io/2023/10/10/hello-world/" data-id="clnl5a6zy0000vy0jcy0g7c3d" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
